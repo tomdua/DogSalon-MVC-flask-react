@@ -31,7 +31,7 @@ class Register extends Component {
 
         register(newUser).then(response => {
             console.log(response);
-            if(response===undefined || response.data=='That username already exists!')
+            if(response===undefined || response.data==='That username already exists!')
                 alert('That username already exists!')
             this.props.history.push(`/login`)
     })
