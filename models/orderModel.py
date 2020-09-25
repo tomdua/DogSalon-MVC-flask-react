@@ -1,12 +1,29 @@
 from db import mongo
+from flask import request,json
+from datetime import datetime
 
 class OrderModel():
 
-    def get(self):
-        orders = mongo.db.order.find()
+    def __init__(self):
+        pass
+
+    def get_orders_list(self):
+        orders = mongo.db.customers.find()
         orders_list = []
         for order in orders:
             data = {}
-            data['first_name'] = order['first_name']
+            data = {'Username': order['Username'], 'currentTime': order['currentTime'], 'arriveTime': order['arriveTime']}
             orders_list.append(data)
         return orders_list
+
+    def get_order(self,username):
+        orders = mongo.db.customers
+        existing_customer = orders.find_one(username)
+        return existing_customer
+        
+    def insert_order(self,username):
+        orders = mongo.db.customers
+        new_customer = {"Username":username ,"currentTime":datetime.now() ,"arriveTime": ""}
+        orders.insert_one(new_customer)
+
+

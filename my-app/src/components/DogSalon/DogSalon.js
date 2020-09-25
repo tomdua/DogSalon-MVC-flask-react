@@ -10,26 +10,23 @@ class DogSalon extends Component {
   constructor() {
     super();
     this.state = {
-      selected: new Date()
+      currentTime: new Date(),
     };
   }
 
   handle = (date) => {
     this.setState({
       selectedDate: date,
-    })
+    },
+    )
   }
-//   function () {
-//    const [startDate, setStartDate] = useState(new Date());
-
-//    }
 
   render() {
     return (
       <div>
          <h1>Time Pick</h1>
          <DatePicker
-            selected={this.state.selected}
+            selected={this.state.currentTime}
             onChange={this.handle}
             showTimeSelect
             timeFormat="HH:mm"
@@ -42,7 +39,8 @@ class DogSalon extends Component {
             dateFormat="MMMM d, yyyy h:mm aa"
             timeCaption="time"
             minDate={moment().toDate()}
-          ></DatePicker>
+          >
+          </DatePicker>
           <button type="submit" className="btn-primary btn-block">Sign in</button>
       </div>
     );
