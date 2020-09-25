@@ -4,7 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import moment from 'moment';
 import setHours from "date-fns/setHours";
 import setMinutes from "date-fns/setMinutes";
-
+import {addOrder} from "./DogSalonFunctions"
 
 class DogSalon extends Component {
   constructor() {
@@ -13,12 +13,18 @@ class DogSalon extends Component {
       currentTime: new Date(),
     };
   }
-
+  
   handle = (date) => {
     this.setState({
       selectedDate: date,
     },
     )
+  }
+  selectedDate = (currentTime) =>
+  {
+    addOrder(currentTime).then(response => {
+      console.log(response);
+    })
   }
 
   render() {
@@ -41,7 +47,7 @@ class DogSalon extends Component {
             minDate={moment().toDate()}
           >
           </DatePicker>
-          <button type="submit" className="btn-primary btn-block">Sign in</button>
+          <button type="submit" onClick={() => addOrder('2300')} className="btn-primary btn-block">Sign in</button>
       </div>
     );
   }

@@ -12,12 +12,12 @@ class OrderController():
         order_list = OrderModel.get_orders_list(self)
         return (jsonify(order_list), 200)
 
-    def add_order(self):
+    def add_order(self,time):
         order_list = OrderModel.get_orders_list(self)
         # customer_list = mongo.db.customers
         username = session['username']
         existing_customer = OrderModel.get_order(self,username)
         if existing_customer:
             return (jsonify('alrardy sign in to list'), 401)
-        insert=OrderModel.insert_order(self,username)
+        insert=OrderModel.insert_order(self,username,time)
         return (jsonify('user sign in to list'), 200)

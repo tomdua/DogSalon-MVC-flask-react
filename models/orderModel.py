@@ -21,9 +21,9 @@ class OrderModel():
         existing_customer = orders.find_one(username)
         return existing_customer
         
-    def insert_order(self,username):
+    def insert_order(self,username,time):
         orders = mongo.db.customers
-        new_customer = {"Username":username ,"currentTime":datetime.now() ,"arriveTime": ""}
+        new_customer = {"Username":username ,"currentTime":datetime.now() ,"arriveTime": request.view_args['time']}
         orders.insert_one(new_customer)
 
 

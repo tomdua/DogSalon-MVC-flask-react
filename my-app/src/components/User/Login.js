@@ -8,10 +8,12 @@ class Login extends Component {
             username: '',
             firstname:'',
             lastname:'',
-            password: ''
+            password: '',
+
         }
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
+  
     }
     onChange (e) {
         this.setState({ [e.target.name]: e.target.value })
@@ -53,7 +55,9 @@ class Login extends Component {
                                     name="username"
                                     placeholder="Enter username"
                                     value={this.state.username}
-                                    onChange={this.onChange} />
+                                    onChange={this.onChange}
+                                    data-parse="uppercase"
+                                    />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="password">Password </label>

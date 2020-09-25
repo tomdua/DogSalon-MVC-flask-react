@@ -13,11 +13,12 @@ def order_list():
         return orderControllers.all_orders()
     except TemplateNotFound:
         abort(404)
-
-@order_routes.route('/neworder', methods=['PUT'])
-def new_order():
+        
+@order_routes.route('/<neworder>', defaults={'time': None})
+@order_routes.route('/neworder/<time>/', methods=['PUT'])
+def new_order(time):
     try:
         orderControllers = OrderController()
-        return orderControllers.add_order()
+        return orderControllers.add_order(time)
     except TemplateNotFound:
         abort(404)
