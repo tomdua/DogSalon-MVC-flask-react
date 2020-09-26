@@ -1,6 +1,6 @@
 from flask import request,session, redirect,jsonify,render_template
-from models.orderModel import OrderModel
 import bcrypt
+from models.orderModel import OrderModel
 
 
 class OrderController():
@@ -14,17 +14,17 @@ class OrderController():
 
     def add_order(self):
         time = request.get_json()['time']
+        username = request.get_json()['username']
         order_list = OrderModel.get_orders_list(self)
-        username = session['username']
         existing_customer = OrderModel.get_order(self,username)
         if existing_customer:
-            return (jsonify('alrardy sign in to list'), 401)
+            return (jsonify('alrardy sign in to list'), 301)
         insert=OrderModel.insert_order(self,username,time)
         return (jsonify('user sign in to list'), 200)
 
     def delete_order(self):
         order_list = OrderModel.get_orders_list(self)
-        username = session['username']
+        username = request.get_json()['username']
         existing_customer = OrderModel.get_order(self,username)
         if existing_customer:
             _delete=OrderModel._delete_order(self,username)

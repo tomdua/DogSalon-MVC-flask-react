@@ -12,7 +12,7 @@ import os
 
 def run():
     app = Flask(__name__)
-    CORS(app, resources={r"/api/*": {"origins": "*"}}, support_credentials=True)
+    CORS(app)
     jwt = JWTManager(app)
     try:
         app.config['CORS_HEADERS'] = 'application/json'

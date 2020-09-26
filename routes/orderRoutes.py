@@ -3,6 +3,7 @@ from jinja2 import TemplateNotFound
 from controller.userControllers import UserController
 from controller.orderControllers import OrderController
 # from flask_cors import CORS, cross_origin
+from functools import wraps
 
 order_routes = Blueprint('order_routes', __name__)
 
@@ -15,7 +16,8 @@ def order_list():
     except TemplateNotFound:
         abort(404)
 
-@order_routes.route('/deleteorder', methods=['GET'])
+
+@order_routes.route('/deleteorder', methods=['PUT'])
 
 def delete_order():
     try:
