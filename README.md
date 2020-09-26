@@ -1,6 +1,9 @@
 # DogSalon-MVC-flask-react
 
 * API - [Swagger](https://app.swaggerhub.com/apis-docs/tomdua/DogSalon/1.0.0-oas3).
+* Server - flask(Model View Controller software design pattern)
+* Client - react
+* Database - mongodb(atlas)
 
 ## Installation
 
@@ -14,5 +17,15 @@
   ```
   pip install Flask
   ```
+  
+## Available Scripts
+
+In the project directory, you can run:
+### `npm start`
+Runs the app in the development mode.<br />
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### `python app.py`
+Runs the server in the development mode.<br />
   
   
