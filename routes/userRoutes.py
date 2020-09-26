@@ -3,7 +3,6 @@ from jinja2 import TemplateNotFound
 from controller.userControllers import UserController
 
 user_routes = Blueprint('user_routes', __name__)
-
 # @routes.route('/')
 # def index():
 #     user_controller = UserController() 

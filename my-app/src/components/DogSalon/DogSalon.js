@@ -11,15 +11,18 @@ class DogSalon extends Component {
     super();
     this.state = {
       currentTime: new Date(),
+      time:""
     };
   }
   
   handle = (date) => {
     this.setState({
       selectedDate: date,
+      time:date
     },
     )
   }
+
   selectedDate = (currentTime) =>
   {
     addOrder(currentTime).then(response => {
@@ -47,7 +50,7 @@ class DogSalon extends Component {
             minDate={moment().toDate()}
           >
           </DatePicker>
-          <button type="submit" onClick={() => addOrder('2300')} className="btn-primary btn-block">Sign in</button>
+          <button type="submit" onClick={() => addOrder(this.state.time)}className="btn-primary btn-block">Pick order</button>
       </div>
     );
   }

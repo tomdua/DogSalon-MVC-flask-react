@@ -1,8 +1,7 @@
+from models.userModel import UserModel
 from flask import request,session, redirect,jsonify,render_template
 import bcrypt
 import os
-from models.userModel import UserModel
-
 
 class UserController():
 

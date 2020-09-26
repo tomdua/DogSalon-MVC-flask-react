@@ -3,8 +3,8 @@ import axios from 'axios'
 const API_URL = 'http://localhost:5000/userRoutes';
 
 
-export const register = user => {
-  return axios
+export const register = async user => {
+  return await axios
     .post(API_URL+'/register', {
     firstname: user.firstname,
     lastname: user.lastname,
@@ -19,8 +19,8 @@ export const register = user => {
     })
 }
 
-export const login = user => {
-  return axios
+export const login =  user => {
+  return  axios
     .post(API_URL+'/login', {
       username: user.username,
       password: user.password

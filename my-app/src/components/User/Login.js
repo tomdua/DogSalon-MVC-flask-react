@@ -6,8 +6,6 @@ class Login extends Component {
         super()
         this.state = {
             username: '',
-            firstname:'',
-            lastname:'',
             password: '',
 
         }
@@ -33,7 +31,7 @@ class Login extends Component {
             if(res===undefined)
                 alert('Invalid username/password combination')
             else{
-            if (res.data === 'suscs username/password combination') 
+            if (res.data === 'Suscs username/password combination') 
             this.props.history.push(`/profile`)
             else
                 alert('Invalid username/password combination')

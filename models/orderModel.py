@@ -1,6 +1,7 @@
 from db import mongo
 from flask import request,json
 from datetime import datetime
+from bson.objectid import ObjectId
 
 class OrderModel():
 
@@ -18,12 +19,20 @@ class OrderModel():
 
     def get_order(self,username):
         orders = mongo.db.customers
-        existing_customer = orders.find_one(username)
+        existing_customer=orders.find_one({'Username' : username})
         return existing_customer
+        return None
         
     def insert_order(self,username,time):
         orders = mongo.db.customers
-        new_customer = {"Username":username ,"currentTime":datetime.now() ,"arriveTime": request.view_args['time']}
+        new_customer = {"Username":username ,"currentTime":datetime.now() ,"arriveTime": time}
         orders.insert_one(new_customer)
+    
+    def _delete_order(self,username):
+        orders = mongo.db.customers
+        orders.delete_one({'Username' : username})
+        return 'Succses delete this order'
+        return 'Cant delete this order'
+
 
 

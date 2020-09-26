@@ -12,9 +12,10 @@ import os
 
 def run():
     app = Flask(__name__)
-    CORS(app, support_credentials=True)
+    CORS(app, resources={r"/api/*": {"origins": "*"}}, support_credentials=True)
     jwt = JWTManager(app)
     try:
+        app.config['CORS_HEADERS'] = 'application/json'
         app.config['MONGO_DBNAME'] = config['MONGO_DBNAME']
         app.config['MONGO_URI'] = config['MONGO_URI']
         app.config['SECRET_KEY'] = config['SECRET_KEY']
@@ -29,7 +30,3 @@ def run():
 
 if __name__ == '__main__':
     run()
-
-
-
-

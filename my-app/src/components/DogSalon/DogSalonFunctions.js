@@ -1,13 +1,11 @@
 import axios from 'axios'
 
 const API_URL = 'http://localhost:5000/orderRoutes';
-const URL = 'http://localhost:5000/orderRoutes/neworder';
+axios.defaults.withCredentials=true
 
 
-
-
-export const orderList = async () => {
-  return await axios
+export const orderList = () => {
+  return  axios
     .get(API_URL+ '/orderlist', {
     })  
     .then(response => {
@@ -18,12 +16,25 @@ export const orderList = async () => {
 })
 }
 
-export const addOrder = (time) => {
-  return  axios
-    .put(`${URL}/${time}`).then(response => {
+export const addOrder = time => {
+  axios.post(API_URL+'/neworder',{time},
+  {withCredentials:true}
+    )
+  .then(response => {
         console.log(response)
     })
     .catch(error => {
         console.log(error.response)
+})
+}
+
+export const deleteOrder = () => {
+  axios.get(API_URL+'/deleteorder',{withCredentials:true} )  
+  .then(response => {
+      console.log(response)
+      return response.data
+  })
+  .catch(error => {
+      console.log(error.response)
 })
 }
