@@ -49,7 +49,7 @@ class DogSalon extends Component {
             minDate={moment().toDate()}
           >
           </DatePicker>
-          <button type="submit" onClick={() => addOrder(this.state.username,this.state.time)} style={{marginLeft:'auto',marginRight:'auto',width:'auto'}}className="btn-primary btn-block">Pick order</button>
+          <button type="submit" onClick={() => addOrder(this.state.username,this.state.time)} style={{marginLeft:'auto',marginRight:'auto',width:'auto',marginTop:'10px'}}className="btn-primary btn-block">Pick order</button>
       </div>
     );
   }
