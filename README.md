@@ -7,7 +7,7 @@
 
 ## Installation
 
-1. Install the latest version of [react](https://github.com/facebook/react)
+1. Install the latest version of [npm](https://docs.npmjs.com/cli/install)
 
   ```
   npm install
