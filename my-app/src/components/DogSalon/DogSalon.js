@@ -31,7 +31,8 @@ class DogSalon extends Component {
   render() {
     return (
       <div>
-         <h1>Time Pick</h1>
+         <h1 style={{fontWeight:'bold',fontSize: '50px',marginBottom:'15px'}}>Time Pick</h1>
+         <h5>Click here to pick a date:</h5>
          <DatePicker
             selected={this.state.currentTime}
             onChange={this.handle}
@@ -48,7 +49,7 @@ class DogSalon extends Component {
             minDate={moment().toDate()}
           >
           </DatePicker>
-          <button type="submit" onClick={() => addOrder(this.state.username,this.state.time)}className="btn-primary btn-block">Pick order</button>
+          <button type="submit" onClick={() => addOrder(this.state.username,this.state.time)} style={{marginLeft:'auto',marginRight:'auto',width:'auto'}}className="btn-primary btn-block">Pick order</button>
       </div>
     );
   }

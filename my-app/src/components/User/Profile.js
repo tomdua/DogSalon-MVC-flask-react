@@ -21,26 +21,11 @@ class Profile extends Component {
     render () {
         return (
             <div className="container">
-                <div className="jumbotron mt-5">
+                <div >
                     <div className="col-sm-8 mx-auto">
-                        <h1 className="text-center">Profile</h1>
+                        <h1 style={{fontWeight:'bold',fontSize: '50px',marginBottom:'15px'}}>Profile</h1>
                     </div>
-                    <table className="table col-md-6 mx-auto">
-                        <tbody>
-                            <tr>
-                                <td>Hello back</td>
-                                <td>{this.state.username}</td>
-                            </tr>
-                            {/* <button onClick={addtolist} type="submit" className="btn btn-lg btn-primary btn-block">
-                                Sign in to list
-                            </button>
-                            <button type="submit" className="btn btn-lg btn-primary btn-block">
-                                Delete my turn
-                            </button> */}
-                        </tbody>
-
-            
-                    </table>
+                    <p>Wellcom to your profile. Here you can edit your order</p>
                 </div>
             </div>
         )

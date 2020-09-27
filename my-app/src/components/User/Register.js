@@ -43,7 +43,7 @@ class Register extends Component {
                 <div className="row">
                     <div className="col-md-6 mt-5 mx-auto">
                         <form noValidate onSubmit={this.onSubmit}>
-                            <h1 className="h3 mb-3 font-weight-normal">Register</h1>
+                            <h1 style={{fontWeight:'bold',fontSize: '50px',marginBottom:'15px'}}>Register</h1>
                             <div className="form-group">
                                 <label htmlFor="firstname,">First Name</label>
                                 <input type="text"

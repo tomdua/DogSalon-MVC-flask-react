@@ -8,13 +8,13 @@ import Profile from './components/User/Profile';
 import HomePage from './components/HomePage';
 import DogSalon from './components/DogSalon/DogSalon';
 import CustomerList from './components/DogSalon/CustomerList';
-
-
+import dogBakground from './assets/images/background.jpg'
 
 
 class App extends Component {
   render(){
   return (
+    <div  styles={{backgroundImage:`url(${dogBakground})`}}>
     <Router>
       <div className="App">
         <NavBar></NavBar>
@@ -28,6 +28,7 @@ class App extends Component {
       </div>
       </div>
     </Router>
+    </div>
 
   );
 }

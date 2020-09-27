@@ -34,7 +34,7 @@ const CustomrComponent = () => {
       return orders.map(({Username,currentTime,arriveTime  }) => {
         //return employees && employees.map(({id, username, currentTime, ArriveTime })  => {
           return (
-              <tr className={classes.tabel} key={Username}>
+              <tr key={Username}>
                   <td>{Username}</td>
                   <td>{currentTime}</td>
                   <td>{arriveTime}</td>
@@ -48,14 +48,14 @@ const CustomrComponent = () => {
 
       return (  
         <>
-        <div>
+        <div >
         <div className={classes.order}>
             <h1 id='title'>Order</h1>
-            <table id='order'>
+            <table id='order' className={"myTable"}>
                 <thead>
                     <tr>{renderHeader()}</tr>
                 </thead>
-                <tbody>
+                <tbody style={{backgroundColor:'white'}}>
                     {renderBody()}
                 </tbody>
             </table>

@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
 
-table#table1 {
+
+.myTable{
   width:70%; 
-  margin-left:15%; 
-  margin-right:15%;
+  margin-left:auto; 
+  margin-right:auto;
 }
 
 #order td,
@@ -14,15 +15,20 @@ table#table1 {
 }
 
 #order tr:hover {
-  background-color: #ddd;
+  background-color:aliceblue;
 }
 
 #order th {
   padding: 10px;
   text-align: center;
-  background-color:blue;
+  background-color:black;
   color: white;
   
+}
+#title{
+  font-weight:bold;
+  font-size: 50px;
+  margin-bottom:15px;
 }
 
 .opration {
