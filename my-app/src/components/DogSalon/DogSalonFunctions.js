@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'https://myappdog.herokuapp.com/orderRoutes';
+const API_URL = 'http://3.15.39.178:5000/orderRoutes';
 // axios.defaults.withCredentials=true
 
 
