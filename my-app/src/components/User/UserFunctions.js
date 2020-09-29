@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:5000/userRoutes';
+const API_URL = 'https://myappdog.herokuapp.com/userRoutes';
 
 
 export const register = async user => {
