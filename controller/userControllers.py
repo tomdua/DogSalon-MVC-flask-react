@@ -1,6 +1,6 @@
 from models.userModel import UserModel
-from flask import request,session, redirect,jsonify,render_template
-import bcrypt
+from flask import request,session, redirect,jsonify,render_template,Flask
+from flask_bcrypt import bcrypt
 import os
 
 class UserController():
